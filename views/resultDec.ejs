@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+
+    <div style="text-align: right; margin: 20px 30px;"><a href="/adminLogout" class="btn btn-danger">Logout</a></div>
+    <form action="/admin/result" method="post">
+        <div style="display: flex; flex-direction: row;">
+     
+          <div class="col-6">
+     
+              <table class="table table-striped" id="myTable">
+                  <thead class="thead-dark">
+                      <tr>
+                    
+                          <th scope="col">Match no. </th>
+                          <th scope="col">Team Name</th>
+                          <th scope="col">Team Id</th>
+                          <th scope="col">salect</th>
+                      </tr>
+                  </thead>
+                  <!-- <tbody> -->
+   
+                    <% team1.forEach(function(i) { %>
+         
+                        <tr class="searchClass">
+                            <td scope="row">
+                                <%= i.matchNo %>
+                            </td>
+                            <td>
+                                <%= i.tname %>
+                            </td>
+                            <td>
+                                <%= i.teamId %>
+                            </td>
+                            <td><input type="radio" name="<%= i.matchNo %>" id="<%=i.matchNo%>" value="<%=i.teamId%>">
+                            </td>
+            
+                        </tr>          
+            
+                        <% }); %>
+          
+                  <!-- </tbody> -->
+              </table>
+          </div>
+          <div class="col-6">
+     
+              <table class="table table-striped" id="myTable">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th scope="col">Team Name</th>
+                          <th scope="col">Team Id</th>
+                          <th scope="col">salect</th>
+                      </tr>
+                  </thead>
+                  <!-- <tbody> -->
+                    <% team2.forEach(function(i) { %>
+         
+                        <tr class="searchClass">
+                          
+                            <td>
+                                <%= i.tname %>
+                            </td>
+                            <td>
+                                <%= i.teamId %>
+                            </td>
+                            <td>
+                                <input type="radio" name="<%= i.matchNo %>" id="<%=i.matchNo%>" value="<%=i.teamId%>">
+                            </td>
+            
+                        </tr>
+            
+            
+                        <% }); %>
+          
+          
+                  <!-- </tbody> -->
+              </table>
+          </div>
+          
+         </div>
+         <button type="submit" class="btn btn-primary btn-block mb-4">
+             Submit
+           </button>
+     </form>
+
+    <%- include('partials/footer') %>

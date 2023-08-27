@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label for="email">Email</label>
+                <input type="text" placeholder="Email" id="loginUsername" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="loginPassword" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/register" id="showRegister">Register</a></p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

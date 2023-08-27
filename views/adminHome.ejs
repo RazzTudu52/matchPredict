@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+
+<div style="margin: 20px 0px; text-align: center;">
+<a href="/addTeam"><button type="button" class="btn btn-success">Add New Team</button></a>
+<a href="/admin/result"><button type="button" class="btn btn-success">Result Declare</button></a>
+<a href="/admin/setmatchs"><button type="button" class="btn btn-success">Set Matches</button></a>
+<a href="/adminLogout"><button type="button" class="btn btn-danger">Log Out</button></a>
+</div>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">S. No.</th>
+            <th scope="col">Match no. </th>
+            <th scope="col">Team Name</th>
+            <th scope="col">Team Id</th>
+        </tr>
+        
+    </thead>
+    <% if(team.length!=0){ var i=1; team.forEach(function(data){ %>
+         
+        <tr class="searchClass">
+            <td scope="row">
+                <%= i %>
+            </td>
+            <td scope="row">
+                <%= data.matchNo %>
+            </td>
+            <td>
+                <%= data.tname %>
+            </td>
+            <td>
+                <%= data.teamId %>
+            </td>
+         
+
+        </tr>
+
+        <% i++; })} %>
+
+    </tbody>
+</table>
+
+
+<div class="setDayClass">
+    <form action="satDay" method="post">
+        <input type="date" name="resultDay" id="resultDay">
+        <button type="submit" class="btn btn-primary btn-block mb-4">
+            Set Day For Result
+        </button>
+   </form>
+
+</div>
+
+
+<%- include('partials/footer') %>

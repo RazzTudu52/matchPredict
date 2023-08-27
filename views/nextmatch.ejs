@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<h3>Set match No</h3>
+
+<form action="/admin/setmatchs" method="post">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">S. No.</th>
+                <th scope="col">Team Name</th>
+                <th scope="col">Team Id</th>
+                <th scope="col">Set Match no. </th>
+            </tr>
+            
+        </thead>
+    
+        <% team.forEach(function(i) { %>
+             
+            <tr class="searchClass">
+                <td scope="row">
+                    <%= i.s_no %>
+                </td>
+                <td>
+                    <%= i.tname %>
+                </td>
+                <td>
+                    <%= i.teamId %>
+                </td>
+                <td scope="row">
+                   <input type="number" name="<%= i._id %>" id="">
+                </td>
+             
+    
+            </tr>
+    
+    
+            <% }); %>
+    
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary btn-block mb-4">
+        submit
+      </button>
+</form>
+
+
+
+<%- include('partials/footer') %>

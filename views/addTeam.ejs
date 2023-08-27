@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+    <div class="container mt-5">
+        <h1>Add Team</h1>
+
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+
+                        <!-- Makes POST request to /login route -->
+                        <form action="/addTeam" method="POST">
+                            <div class="form-group">
+                                <label for="name">Team Name</label>
+                                <input type="text" class="form-control" name="tname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Team Id</label>
+                                <input type="number" class="form-control" name="teamId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Match No</label>
+                                <input type="number" class="form-control" name="matchNo">
+                            </div>
+                         
+                      
+                            <button type="submit" class="btn btn-dark">Add Team</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
